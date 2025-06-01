@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and responsive behavior -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title and favicon -->
+    <title>CRUD</title>
+    <link rel="icon" href="ICON/CRUD.ico" type="image/png" />
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" /> <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="CSS/dataTables.bootstrap5.css" /> <!-- DataTables Bootstrap theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="CSS/style.css" /> <!-- Custom styles -->
+</head>
+
+<body>
+
+    <!-- Top action button group -->
+    <div class="btn-group btn-group-lg mt-2" role="group" aria-label="CRUD Actions">
+        <!-- Button to trigger 'New Record' modal -->
+        <button type="button" class="btn btn-outline-dark" id="new-record-button">
+            <i class="bi bi-person-plus"></i> New Record
+        </button>
+
+        <!-- Button to trigger hidden file input for uploading JSON -->
+        <button type="button" class="btn btn-outline-dark" id="upload-json-button">
+            <i class="bi bi-cloud-arrow-up"></i> Upload JSON
+        </button>
+
+        <!-- Hidden file input for JSON upload -->
+        <input type="file" id="upload-json-file" accept=".json" hidden />
+
+        <!-- Button to trigger JSON download of current data -->
+        <button type="button" class="btn btn-outline-dark" id="download-json-button">
+            <i class="bi bi-cloud-arrow-down"></i> Download JSON
+        </button>
+    </div>
+
+    <!-- Students Data Table -->
+    <table id="crud" class="table table-striped caption-top table-bordered border-dark table-sm display nowrap">
+        <caption>List of Students</caption>
+        <thead class="table-dark">
+            <tr>
+                <th>Identity</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Birthday</th>
+                <th>Age</th> <!-- Dynamically calculated from birthday -->
+                <th>Gender</th>
+                <th>Actions</th> <!-- Buttons for editing/deleting -->
+            </tr>
+        </thead>
+    </table>
+
+    <!-- Modal: Add New Record -->
+    <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="add-modal-label">New Record</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal body with form inputs -->
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Identity input -->
+                        <div class="mb-2 col-6">
+                            <label for="add-identity" class="form-label">Identity:</label>
+                            <input type="text" class="form-control" id="add-identity" required />
+                        </div>
+
+                        <!-- Name input -->
+                        <div class="mb-2 col-6">
+                            <label for="add-name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="add-name" required />
+                        </div>
+
+                        <!-- Surname input -->
+                        <div class="mb-2 col-6">
+                            <label for="add-surname" class="form-label">Surname:</label>
+                            <input type="text" class="form-control" id="add-surname" required />
+                        </div>
+
+                        <!-- Birthday input -->
+                        <div class="mb-2 col-6">
+                            <label for="add-birthday" class="form-label">Birthday:</label>
+                            <input type="date" class="form-control" id="add-birthday" required />
+                        </div>
+
+                        <!-- Gender input -->
+                        <div class="mb-2 col-6">
+                            <label for="add-gender" class="form-label">Gender:</label>
+                            <input type="text" class="form-control" id="add-gender" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer with action buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" id="add-save-button">Add New Record</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Existing Record -->
+    <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="edit-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-modal-label">Edit Record</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal body with form inputs prefilled for editing -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="mb-2 col-6">
+                            <label for="identity" class="form-label">Identity:</label>
+                            <input type="text" class="form-control" id="identity" required />
+                        </div>
+                        <div class="mb-2 col-6">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" required />
+                        </div>
+                        <div class="mb-2 col-6">
+                            <label for="surname" class="form-label">Surname:</label>
+                            <input type="text" class="form-control" id="surname" required />
+                        </div>
+                        <div class="mb-2 col-6">
+                            <label for="birthday" class="form-label">Birthday:</label>
+                            <input type="date" class="form-control" id="birthday" required />
+                        </div>
+                        <div class="mb-2 col-6">
+                            <label for="gender" class="form-label">Gender:</label>
+                            <input type="text" class="form-control" id="gender" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer with action buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" id="edit-save-button">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="JS/jquery-3.7.1.js"></script> <!-- jQuery library -->
+    <script src="JS/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS bundle (includes Popper) -->
+    <script src="JS/dataTables.js"></script> <!-- DataTables core library -->
+    <script src="JS/dataTables.bootstrap5.js"></script> <!-- DataTables Bootstrap 5 integration -->
+    <script src="JS/script.js"></script> <!-- Custom JavaScript logic -->
+
+</body>
+
+</html>

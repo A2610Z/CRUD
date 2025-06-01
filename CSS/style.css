@@ -1,0 +1,48 @@
+/* =========================
+   Global Styles
+   ========================= */
+
+/* Apply bold text, center text alignment, and content justification globally */
+* {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* =========================
+   DataTable Container
+   ========================= */
+
+/* Center the DataTable and limit its width for better readability */
+div.dt-container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+/* =========================
+   Inline Button Group
+   ========================= */
+
+/* Container for inline action buttons (edit/save/delete) */
+.inline-buttons {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the buttons */
+    gap: 0.4em;
+    /* Spacing between buttons */
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+}
+
+/* Ensure consistent vertical spacing between buttons in inline edit mode */
+.inline-buttons button {
+    margin: 0.2em 0;
+}
+
+/* =========================
+   Button Icon Spacing
+   ========================= */
+
+/* Add spacing between icon and text in large buttons */
+#large-button-icon {
+    margin-right: 0.7em;
+}

@@ -1,0 +1,144 @@
+{
+    "Students": [
+        {
+            "Identity":"1AG22",
+            "Name": "Ethan",
+            "Surname": "Carter",
+            "Birthday":"1992-10-13",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"2BU84",
+            "Name": "Emma",
+            "Surname": "Riley",
+            "Birthday":"2005-09-05",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"3CO02",
+            "Name": "Jackson",
+            "Surname": "Miller",
+            "Birthday":"1968-02-06",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"4DF68",
+            "Name": "Ava",
+            "Surname": "Thompson",
+            "Birthday":"1998-04-12",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"5EG87",
+            "Name": "Liam",
+            "Surname": "Brooks",
+            "Birthday":"1953-10-01",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"6FL51",
+            "Name": "Olivia",
+            "Surname": "Barnes",
+            "Birthday":"2008-02-23",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"7GV34",
+            "Name": "Noah",
+            "Surname": "Simmons",
+            "Birthday":"2020-02-14",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"8HD75",
+            "Name": "Sophia",
+            "Surname": "James",
+            "Birthday":"2004-02-12",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"9IH54",
+            "Name": "Mason",
+            "Surname": "Reed",
+            "Birthday":"2012-07-07",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"10JY3",
+            "Name": "Mia",
+            "Surname": "Walker",
+            "Birthday":"2009-09-05",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"11KK0",
+            "Name": "Caleb",
+            "Surname": "Foster",
+            "Birthday":"1995-09-17",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"12LO6",
+            "Name": "Isabella",
+            "Surname": "Green",
+            "Birthday":"1996-02-17",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"13MX5",
+            "Name": "Hunter",
+            "Surname": "Blake",
+            "Birthday":"2003-12-15",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"14NI4",
+            "Name": "Harper",
+            "Surname": "Collins",
+            "Birthday":"1965-08-13",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"15OF6",
+            "Name": "Logan",
+            "Surname": "Hayes",
+            "Birthday":"1974-10-24",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"16PQ9",
+            "Name": "Cahrlotte",
+            "Surname": "Payne",
+            "Birthday":"2020-05-04",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"17QG8",
+            "Name": "Dylan",
+            "Surname": "Bennett",
+            "Birthday":"2016-04-18",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"18RT7",
+            "Name": "Amelia",
+            "Surname": "Bryant",
+            "Birthday":"2007-06-26",
+            "Gender": "Female"
+        },
+        {
+            "Identity":"19SL4",
+            "Name": "Owen",
+            "Surname": "Mitchell",
+            "Birthday":"1997-11-23",
+            "Gender": "Male"
+        },
+        {
+            "Identity":"20TV3",
+            "Name": "Ella",
+            "Surname": "Jenkins",
+            "Birthday":"1994-07-10",
+            "Gender": "Female"
+        }
+    ]
+}
